@@ -26,7 +26,9 @@ describe 'As a user' do
       company_2 = Company.create!(name: "CNN")
       job = company_1.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
 
-      visit "/companies/#{company_1.id}/jobs/#{job.id}/edit"
+      # visit "/companies/#{company_1.id}/jobs/#{job.id}/edit"
+      visit edit_company_job_path(company_1, job)
+      
 
       fill_in('job[title]', with: 'Developer 2.0')
       select 'CNN', :from => 'job[company_id]'
