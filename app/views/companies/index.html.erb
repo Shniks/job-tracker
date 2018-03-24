@@ -1,9 +1,10 @@
 <h3>All Companies</h3>
-
+<%= link_to "Add a new company", new_company_path %>
+<h2>Name</h2>
 <ul>
   <% @companies.each do |company| %>
   <li class=company_<%= company.id %>>
-    <%= link_to company.name, company_path(company) %>: 
+    <%= link_to company.name, company_path(company) %>:
     <%= link_to "Edit", edit_company_path(company) %>
     <%= link_to "Delete", company_path(company), method: "delete" %>
   </li>
