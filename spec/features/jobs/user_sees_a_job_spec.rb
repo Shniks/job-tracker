@@ -7,8 +7,8 @@ describe "User sees a specific job" do
 
     visit company_job_path(company, job)
 
-    expect(page).to have_content("ESPN")
-    expect(page).to have_content("Developer")
-    expect(page).to have_content("70")
+    expect(page).to have_content("#{job.company.name}")
+    expect(page).to have_content("#{job.title}")
+    expect(page).to have_content("#{job.level_of_interest}")
   end
 end
