@@ -30,7 +30,15 @@ class JobsController < ApplicationController
   end
 
   def update
-    # implement on your own!
+    @company = Company.find(params[:company_id])
+    @job = Job.find(params[:id])
+    @job.update(job_params)
+    if @job.save
+      flash[:success] = "#{@job.name} updated!"
+      redirect_to company_job_path(@job)
+    else
+      render :edit
+    end
   end
 
   def destroy
