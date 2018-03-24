@@ -44,7 +44,7 @@ class CompaniesController < ApplicationController
     flash[:success] = "#{company.name} was successfully deleted!"
     redirect_to companies_path
   end
-
+#
 
   private
 
