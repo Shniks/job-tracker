@@ -28,7 +28,6 @@ describe 'As a user' do
 
       # visit "/companies/#{company_1.id}/jobs/#{job.id}/edit"
       visit edit_company_job_path(company_1, job)
-      
 
       fill_in('job[title]', with: 'Developer 2.0')
       select 'CNN', :from => 'job[company_id]'
