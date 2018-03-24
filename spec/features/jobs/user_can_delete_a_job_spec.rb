@@ -12,8 +12,8 @@ describe 'As a user' do
       click_link 'Delete'
 
       expect(current_path).to eq("/companies/#{company.id}/jobs")
-      expect(page).to_not have_content('Developer')
-      expect(page).to have_content('Secretary')
+      expect(page).to_not have_content("#{job_1.title}")
+      expect(page).to have_content("#{job_2.title}")
     end
   end
 end
