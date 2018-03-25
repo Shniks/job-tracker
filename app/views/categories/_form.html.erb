@@ -1,0 +1,11 @@
+<%= stylesheet_link_tag "create_edit" %>
+<%= form_for @category do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <div class="create-edit-buttons-container">
+    <%= f.submit %>
+    <a class="create-edit-buttons-container" href="/categories">Cancel</a>
+  </div>
+
+<% end %>

@@ -1,0 +1,13 @@
+<%= stylesheet_link_tag "index_show" %>
+All Jobs for <strong><%= @category.name %></strong>
+
+<% @category.jobs.each do |job| %>
+  <ul>
+    <li><%= link_to "Edit", edit_company_job_path(job.company) %></li>
+    <li><%= link_to "Delete", company_job_path(job.company), method: "delete" %></li>
+    <li><%= job.title %></li>
+    <li><%= job.company %></li>
+    <li><%= job.city %></li>
+    <li><%= job.level_of_interest %></li>
+  </ul>
+<% end %>
