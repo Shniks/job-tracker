@@ -1,4 +1,7 @@
 <%= form_for [@company, @job] do |f| %>
+  <%= f.label :category %>
+  <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+
   <%= f.label :title %>
   <%= f.text_field :title %>
 
