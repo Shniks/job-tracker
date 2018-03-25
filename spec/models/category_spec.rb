@@ -31,6 +31,5 @@ describe Category do
 
       expect(category).to respond_to(:jobs)
     end
-
   end
 end
