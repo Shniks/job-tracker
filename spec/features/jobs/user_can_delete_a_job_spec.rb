@@ -5,10 +5,11 @@ describe 'As a user' do
     it 'I can\'t see the job on the company\'s jobs page' do
 
       company = Company.create!(name: 'ESPN')
-      Category.create!(name: 'Development')
-      Category.create!(name: 'Production')
-      job_1 = company.jobs.create!(title: 'Developer', level_of_interest: 70, city: 'Denver', category_id: 1)
-      job_2 = company.jobs.create!(title: 'Secretary', level_of_interest: 30, city: 'Denver', category_id: 2)
+      category_1 = Category.create!(name: 'Development')
+      category_2 = Category.create!(name: 'Production')
+
+      job_1 = company.jobs.create!(title: 'Developer', level_of_interest: 70, city: 'Denver', category_id: category_1.id)
+      job_2 = company.jobs.create!(title: 'Secretary', level_of_interest: 30, city: 'Denver', category_id: category_2.id)
 
       visit company_job_path(company, job_1)
       click_link 'Delete'
