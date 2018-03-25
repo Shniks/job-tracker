@@ -25,7 +25,6 @@ describe 'User visits the categories index' do
     category_1 = Category.create!(name: 'Development')
 
     visit categories_path
-
     expect(page).to have_button('Delete')
   end
 
