@@ -7,7 +7,9 @@ describe 'user visits create new category page' do
     fill_in 'category[name]', with: 'Musician'
     click_button 'Create Category'
 
-    expect(current_path).to eq('/categories')
+    category = Category.all.last
+
+    expect(current_path).to eq("/categories/#{category.id}")
     expect(page).to have_content('Musician')
   end
 end
