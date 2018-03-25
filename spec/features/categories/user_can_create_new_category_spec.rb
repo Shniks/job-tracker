@@ -12,4 +12,15 @@ describe 'user visits create new category page' do
     expect(current_path).to eq("/categories/#{category.id}")
     expect(page).to have_content('Musician')
   end
+
+  scenario 'They try to create a duplicate category' do
+    category = Category.create!(name: 'Development')
+
+    visit new_category_path
+
+    fill_in 'category[name]', with: 'Development'
+    click_button 'Create Category'
+
+    expect(current_path).to eq(new_category_path)
+  end
 end
