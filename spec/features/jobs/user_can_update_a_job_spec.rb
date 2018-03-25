@@ -28,7 +28,7 @@ describe 'As a user' do
       company_2 = Company.create!(name: 'CNN')
       category_1 = Category.create!(name: 'Development')
       category_2 = Category.create!(name: 'Production')
-      job = company.jobs.create!(title: 'Developer', level_of_interest: 70, city: 'Denver', category_id: category_1.id)
+      job = company_1.jobs.create!(title: 'Developer', level_of_interest: 70, city: 'Denver', category_id: category_1.id)
 
       visit edit_company_job_path(company_1, job)
 
