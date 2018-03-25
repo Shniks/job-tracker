@@ -1,7 +1,12 @@
-All Jobs for <strong><%= @company.name %></strong>
+<%= stylesheet_link_tag "index_show" %>
+<header>
+  <h3>All <%= @company.name %></strong> Jobs</h3>
+</header>
 
-<% @jobs.each do |job| %>
-  <ul>
-    <a href="/companies/<%= @company.id %>/jobs/<%= job.id %>"><%= job.title %></a> at <%= job.company.name %>
-  </ul>
-<% end %>
+<section>
+    <% @jobs.each do |job| %>
+    <ul>
+      <a href="/companies/<%= @company.id %>/jobs/<%= job.id %>"><%= job.title %></a> at <%= job.company.name %>
+    </ul>
+  <% end %>
+</section>
