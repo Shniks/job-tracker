@@ -47,6 +47,7 @@
 .dropdown {
   float: left;
   overflow: hidden;
+  display: inline-block;
 }
 
 /* Dropdown button */
@@ -68,6 +69,7 @@
 /* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
+  right: 0;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
