@@ -10,7 +10,34 @@
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: name %>
   <% end %>
-<%= yield %>
+  <header class="main-header">
+    <h1>Job Tracker</h1>
+  </header>
 
+  <div class="navbar">
+    <a id="home" href="/">Home</a>
+    <nav id="main_nav">
+      <div class="dropdown">
+        <a class="dropbtn">Companies
+          <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <a href="#">Create New Company</a>
+          <a href="#">Show All Companies</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a class="dropbtn">Jobs
+          <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <a href="#">Create New Job</a>
+          <a href="#">By Location</a>
+          <a href="#">By Category</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <%= yield %>
 </body>
 </html>
