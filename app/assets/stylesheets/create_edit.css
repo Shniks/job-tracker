@@ -1,0 +1,54 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  align-content: center;
+  align-items: flex-start;
+}
+
+label {
+  margin-bottom: 1%;
+  font-weight: bold;
+}
+
+select, input, textarea {
+  margin-bottom: 2%;
+}
+
+#job_description {
+  width: 30%
+}
+
+.create-edit-buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2%;
+}
+
+a.create-edit-buttons-container {
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: black;
+  padding: 3.1px;
+  border: 1px solid #000000;
+  box-shadow: 2px 2px;
+  background-color: #00cc99;
+  width: 72px;
+}
+
+.create-edit-buttons-container input {
+  align-self: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  padding: 3.1px;
+  border: 1px solid #000000;
+  box-shadow: 2px 2px;
+  background-color: #00cc99;
+  height: 31px;
+  width: 72px;
+  margin-bottom: 0%;
+  margin-right: 30px;
+}

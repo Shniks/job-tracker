@@ -1,6 +1,11 @@
+<%= stylesheet_link_tag "create_edit" %>
 <%= form_for @company do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <%= f.submit %>
+  <div class="create-edit-buttons-container">
+    <%= f.submit %>
+    <a class="create-edit-buttons-container" href="/companies">Cancel</a>
+  </div>
+
 <% end %>
