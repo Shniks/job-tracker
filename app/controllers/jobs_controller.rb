@@ -31,6 +31,7 @@ class JobsController < ApplicationController
 
   def update
     @company = Company.find(params[:company_id])
+
     @job = Job.find(params[:id])
     @job.update(job_params)
     if @job.save
