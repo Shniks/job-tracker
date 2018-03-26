@@ -1,0 +1,30 @@
+h3 {
+  margin-left: 15px;
+}
+
+table {
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+#add-category-label {
+  margin-left: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.testing {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: red;
+  margin: 2px;
+}
+
+.aa {
+  padding-left: 20px;
+  padding-right: 20px;
+}

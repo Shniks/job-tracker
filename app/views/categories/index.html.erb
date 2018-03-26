@@ -1,18 +1,16 @@
-<%= stylesheet_link_tag "index_show" %>
+<%= stylesheet_link_tag "category_show" %>
 <header>
-  <h3>Job Categories</h3>
-  <%= link_to "Add a new category", new_category_path %>
+  <h3>Job Categories:</h3>
+  <span id="add-category-label"><%= link_to "Add a new category", new_category_path %>
 </header>
 
-<section>
-  <ul>
+<table>
     <% @categories.each do |category| %>
-    <li class=category_<%= category.id %>>
-      <%= link_to "Edit", edit_category_path(category) %>
-      <%= button_to "Delete", category_path(category), method: "delete" %>
-      <%= category.name %>
-      <%= link_to "#{category.jobs.count} Jobs", category_path(category) %>
-    </li>
+      <tr class=category_<%= category.id %>>
+        <td><%= link_to "Edit", edit_category_path(category) %></td>
+        <td><%= link_to "Delete", category_path(category), method: "delete" %></td>
+        <td class="aa" ><%= category.name %></td>
+        <td><%= link_to "#{category.jobs.count} Jobs", category_path(category) %></td>
+      </tr>
     <% end %>
-  </ul>
-</section>
+</table>
