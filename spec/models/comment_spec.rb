@@ -18,12 +18,6 @@ describe Comment do
   end
 
   describe 'relationships' do
-    it 'belongs to a job' do
-      job = Job.new(level_of_interest: 80, description: "Wahoo", city: "Denver")
-      comment = Comment.new(content: 'Lots of fish here')
-      job.comments << comment
-
-      expect(comment).to belong_to(job)
-    end
+    it {should belong_to(:article)}
   end
 end
