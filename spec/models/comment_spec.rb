@@ -18,6 +18,6 @@ describe Comment do
   end
 
   describe 'relationships' do
-    it {should belong_to(:article)}
+    it {should belong_to(:job)}
   end
 end
