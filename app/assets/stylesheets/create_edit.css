@@ -1,8 +1,12 @@
+h2 {
+  margin-left: 15px;
+}
+
 form {
+  margin-top: 50px;
+  margin-left: 15px;
   display: flex;
   flex-direction: column;
-  margin: 30px;
-  align-content: center;
   align-items: flex-start;
 }
 
@@ -19,36 +23,32 @@ select, input, textarea {
   width: 30%
 }
 
-.create-edit-buttons-container {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 2%;
+.create-edit-buttons-container input {
+  margin-top: 20px;
+  align-self: center;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+  padding: 3px;
+  border: 1px solid #000000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #d0d0d0;
+  height: 25px;
+  width: 60px;
+  margin-bottom: 0%;
+  margin-right: 30px;
 }
 
 a.create-edit-buttons-container {
   text-decoration: none;
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   color: black;
-  padding: 3.1px;
+  padding: 3px;
   border: 1px solid #000000;
-  box-shadow: 2px 2px;
-  background-color: #00cc99;
-  width: 72px;
-}
-
-.create-edit-buttons-container input {
-  align-self: center;
-  font-family: sans-serif;
-  font-size: 20px;
-  text-decoration: none;
-  color: black;
-  padding: 3.1px;
-  border: 1px solid #000000;
-  box-shadow: 2px 2px;
-  background-color: #00cc99;
-  height: 31px;
-  width: 72px;
-  margin-bottom: 0%;
-  margin-right: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #d0d0d0;
+  height: 25px;
+  width: 60px;
 }

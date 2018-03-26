@@ -6,7 +6,7 @@ describe 'User deletes a category' do
     category = Category.create!(name: 'Development')
 
     visit categories_path
-    click_button 'Delete'
+    click_link 'Delete'
 
     expect(page).to_not have_content(category.name)
   end
