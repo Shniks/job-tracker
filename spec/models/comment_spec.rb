@@ -11,7 +11,8 @@ describe Comment do
 
     context 'valid attributes' do
       it 'is vaild with content' do
-        comment_2 = Comment.new(content: 'The employees seem nice')
+        job = Job.new(level_of_interest: 80, description: 'Wahoo', city: 'Denver')
+        comment_2 = Comment.new(content: 'The employees seem nice', job: job)
         expect(comment_2).to be_valid
       end
     end
