@@ -4,6 +4,11 @@ Rails.application.routes.draw do
     resources :jobs
   end
 
+  resources :jobs, only: [:index] do
+    resources :comments
+  end
+
+
   resources :categories
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -16,6 +16,14 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <%= link_to "Edit", edit_company_job_path(@job.company) %>
 <%= link_to "Delete", company_job_path(@job.company), method: "delete" %>
 
+<%= form_for [@job, Comment.new] do |f| %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+
+  <%= f.submit("Save") %>
+<% end %>
+
 <table>
   <% @job.comments.each do |comment| %>
   <tr>
