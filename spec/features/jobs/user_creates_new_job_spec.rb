@@ -19,7 +19,7 @@ describe 'User creates a new job' do
 
     job = company.jobs.last
 
-    expect(current_path).to eq("/companies/#{company.id}/jobs/#{Job.last.id}")
+    expect(current_path).to eq("/jobs/#{job.id}")
     expect(page).to have_content("#{job.company.name}")
     expect(page).to have_content("#{job.title}")
     expect(page).to have_content("#{job.level_of_interest}")
