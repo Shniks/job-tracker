@@ -23,6 +23,7 @@ describe 'User goes to a job page' do
 
       visit company_job_path(company, job)
       fill_in 'comment[content]', with: 'I don\'t want this job'
+      click_button 'Create Comment'
 
       expect(page).to have_content('I don\'t want this job')
     end
