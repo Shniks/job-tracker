@@ -3,4 +3,8 @@ class Job < ApplicationRecord
   belongs_to :company
   belongs_to :category
   has_many :comments
+
+  def sorted_comments
+    comments.order("comments.created_at DESC")
+  end
 end
