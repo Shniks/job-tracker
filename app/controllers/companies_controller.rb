@@ -32,11 +32,7 @@ class CompaniesController < ApplicationController
     @company.update(company_params)
     if @company.save
       flash[:success] = "#{@company.name} updated successfully!"
-<<<<<<< HEAD
       redirect_to company_path(@company)
-=======
-      redirect_to companies_path
->>>>>>> 7f00ded309e14d57f3df5371f3437d9e28675a09
     else
       render :edit
     end
