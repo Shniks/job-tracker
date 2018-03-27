@@ -38,6 +38,14 @@ select, input, textarea {
   font-size: 24px;
 }
 
+.success {
+  margin-left: 15px;
+  margin-top: 30px;
+  color: green;
+  font-family: Helvetica;
+  font-size: 24px;
+}
+
 .buttons-container input {
   margin-top: 20px;
   display: inline-block;
