@@ -1,6 +1,5 @@
 class JobsController < ApplicationController
   def index
-    @company = Company.find(params[:company_id])
     if sort_params[:sort] == 'location'
       @jobs = Job.sort_by_city
       render :index
@@ -10,6 +9,7 @@ class JobsController < ApplicationController
     elsif location_params
       @jobs = Job.listing_location(location_params[:location])
     else
+      @company = Company.find(params[:company_id])
       @jobs = @company.jobs
     end
   end

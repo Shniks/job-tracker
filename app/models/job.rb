@@ -19,5 +19,4 @@ class Job < ApplicationRecord
   def self.listing_location(location)
     select('*').where("#{location} = city")
   end
-
 end
