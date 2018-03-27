@@ -13,7 +13,7 @@ describe 'As a user' do
       click_link 'Edit'
 
       expect(current_path).to eq("/companies/#{company.id}/jobs/#{job.id}/edit")
-      # expect(page).to have_content('Category')
+      expect(page).to have_content('Category')
       expect(page).to have_content('Title')
       expect(page).to have_content('Company')
       expect(page).to have_content('City')

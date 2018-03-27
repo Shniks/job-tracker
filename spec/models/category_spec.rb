@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 describe Category do
-  describe "validations" do
-    context "invalid attributes" do
-      it "is invalid without a name" do
+  describe 'validations' do
+    context 'invalid attributes' do
+      it 'is invalid without a name' do
         category = Category.new()
         expect(category).to be_invalid
       end
 
-      it "has a unique name" do
+      it 'has a unique name' do
         Category.create!(name: 'Development')
         category = Category.new(name: 'Development')
 
@@ -16,8 +16,8 @@ describe Category do
       end
     end
 
-    context "valid attributes" do
-      it "is valid with a name" do
+    context 'valid attributes' do
+      it 'is valid with a name' do
         category = Category.new(name: 'Development')
 
         expect(category).to be_valid
