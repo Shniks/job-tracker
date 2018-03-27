@@ -3,6 +3,12 @@ h2 {
   font-size: 40px;
 }
 
+h3 {
+  margin-left: 15px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
 table {
   margin-left: 15px;
   margin-top: 30px;
@@ -18,8 +24,8 @@ table {
 }
 
 .category-name {
-  /* padding-left: 20px; */
-  padding-right: 20px;
+  font-size: 16px;
+  padding-right: 60px;
 }
 
 td {
