@@ -7,7 +7,7 @@ describe 'User goes to a company page' do
       contact = Contact.create!(name: 'Laura', position: 'HR Director', email: 'laura@company.com', company: company)
 
       visit company_path(company)
-save_and_open_page
+
       expect(page).to have_content(contact.name)
       expect(page).to have_content(contact.position)
       expect(page).to have_content(contact.email)
