@@ -6,6 +6,11 @@ form {
   align-items: flex-start;
 }
 
+h3 {
+  margin-left: 12px;
+  font-size: 40px;
+}
+
 label {
   margin-bottom: 1%;
   font-weight: bold;
@@ -13,13 +18,36 @@ label {
 
 select, input, textarea {
   margin-bottom: 2%;
+  width: 220px;
 }
 
 #job_description {
   width: 30%
 }
 
+.new-company {
+  margin-left: 12px;
+  font-size: 40px;
+}
+
+.failure {
+  margin-left: 15px;
+  margin-top: 30px;
+  color: red;
+  font-family: Helvetica;
+  font-size: 24px;
+}
+
+.success {
+  margin-left: 15px;
+  margin-top: 30px;
+  color: green;
+  font-family: Helvetica;
+  font-size: 24px;
+}
+
 .buttons-container input {
+  margin-top: 20px;
   display: inline-block;
   font-family: Helvetica;
   font-size: 12px;

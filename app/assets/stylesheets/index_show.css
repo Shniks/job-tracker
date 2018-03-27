@@ -1,0 +1,38 @@
+h3 {
+  margin-left: 12px;
+  font-size: 40px;
+}
+
+h2 {
+  margin-left: 15px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+#add-company-label {
+  margin-left: 15px;
+  padding-bottom: 120px;
+}
+
+#add-job-label {
+  margin-left: 15px;
+  padding-bottom: 120px;
+}
+
+.company-list, .job-list {
+  font-size: 16px;
+  padding-right: 60px;
+  padding-bottom: 15px;
+}
+
+.job-list-1 {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-right: 60px;
+  padding-bottom: 15px;
+}
+
+.all-jobs-list {
+  margin-left: 0px;
+}

@@ -36,6 +36,7 @@
   justify-content: space-between;
   margin-bottom: 20px;
   background-color: #4a2e60;
+  box-shadow: 10px 10px 5px grey;
 }
 
 /* Links inside the navbar */
@@ -87,9 +88,9 @@
 .dropdown-content a {
   float: none;
   color: black;
-  padding: 12px 14px;
+  padding: 8px 14px;
   text-decoration: none;
-  display: block;
+  display: grid;
   text-align: left;
 }
 

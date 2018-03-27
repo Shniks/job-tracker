@@ -1,18 +1,16 @@
 <%= stylesheet_link_tag "index_show" %>
 <header>
-  <h3>All Companies</h3>
-  <%= link_to "Add a new company", new_company_path %>
+  <h3>List of Companies</h3>
+  <span id="add-company-label" title="Add a New Company"><%= link_to image_tag("company.png", height: 35, width: 35), new_company_path %>
 </header>
 
-<section>
-  <h2>Name</h2>
-  <ul>
+<h2>Company Name</h2>
+<table>
     <% @companies.each do |company| %>
-    <li class=company_<%= company.id %>>
-      <%= link_to company.name, company_path(company) %>:
-      <%= link_to "Edit", edit_company_path(company) %>
-      <%= link_to "Delete", company_path(company), method: "delete" %>
-    </li>
+      <tr class=company_<%= company.id %>>
+        <td class="company-list"><%= link_to company.name, company_path(company) %></td>
+        <td title="Edit"><%= link_to image_tag("edit.png", height: 15, width: 15), edit_company_path(company) %></td>
+        <td title="Delete"><%= link_to image_tag("delete.png", height: 15, width: 15), company_path(company), method: "delete" %></td>
+      </tr>
     <% end %>
-  </ul>
-</section>
+</table>
