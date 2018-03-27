@@ -11,10 +11,10 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     if @company.save
       flash[:success] = "#{@company.name} created successfully!"
-      redirect_to companies_path(@company)
+      redirect_to companies_path
     else
       flash[:failure] = "Sorry, that company name already exists. Please try again!"
-      redirect_to new_company_path(@company)
+      redirect_to new_company_path
     end
   end
 
@@ -32,7 +32,7 @@ class CompaniesController < ApplicationController
     @company.update(company_params)
     if @company.save
       flash[:success] = "#{@company.name} updated successfully!"
-      redirect_to companies_path(@company)
+      redirect_to companies_path
     else
       render :edit
     end
