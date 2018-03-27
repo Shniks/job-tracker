@@ -19,10 +19,9 @@ describe 'User creates a new job' do
 
     job = company.jobs.last
 
-    expect(current_path).to eq("/jobs/#{job.id}")
+    expect(current_path).to eq(company_jobs_path(company))
+    save_and_open_page
     expect(page).to have_content("#{job.company.name}")
     expect(page).to have_content("#{job.title}")
-    expect(page).to have_content("#{job.level_of_interest}")
-    expect(page).to have_content("#{job.city}")
   end
 end
