@@ -6,6 +6,11 @@ form {
   align-items: flex-start;
 }
 
+h3 {
+  margin-left: 12px;
+  font-size: 40px;
+}
+
 label {
   margin-bottom: 1%;
   font-weight: bold;
