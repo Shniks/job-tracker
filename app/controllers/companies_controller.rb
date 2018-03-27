@@ -20,7 +20,7 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
-    redirect_to company_jobs_path(@company)
+    render :show
   end
 
   def edit
