@@ -6,7 +6,7 @@ describe 'User goes to a company page' do
       company = Company.create!(name: 'ESPN')
       contact = Contact.create!(name: 'Laura', position: 'HR Director', email: 'laura@company.com', company: company)
 
-      visit company_path(company)
+      visit "companies/#{company.id}"
 
       expect(page).to have_content(contact.name)
       expect(page).to have_content(contact.position)
