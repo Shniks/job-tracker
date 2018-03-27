@@ -9,6 +9,7 @@ describe 'User sees all companies' do
 
     expect(page).to have_link('Add a new company')
     expect(page).to have_content("#{company.name}")
+    expect(page).to have_content("#{company_two.name}")
   end
 
 end
