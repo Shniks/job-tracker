@@ -20,6 +20,7 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @contact = Contact.new
     render :show
   end
 
@@ -32,7 +33,7 @@ class CompaniesController < ApplicationController
     @company.update(company_params)
     if @company.save
       flash[:success] = "#{@company.name} updated successfully!"
-      redirect_to companies_path
+      redirect_to company_path(@company)
     else
       render :edit
     end
@@ -45,7 +46,6 @@ class CompaniesController < ApplicationController
     flash[:success] = "#{company.name} deleted successfully!"
     redirect_to companies_path
   end
-#
 
   private
 

@@ -8,6 +8,6 @@ describe 'User deletes a category' do
     visit categories_path
     click_link 'Delete'
 
-    expect(page).to_not have_content(category.name)
+    expect(page).to have_content("#{category.name} deleted successfully!")
   end
 end

@@ -9,7 +9,7 @@ describe 'user visits create new category page' do
 
     category = Category.all.last
 
-    expect(current_path).to eq("/categories/#{category.id}")
+    expect(current_path).to eq("/categories")
     expect(page).to have_content('Musician')
   end
 
