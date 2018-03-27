@@ -7,4 +7,17 @@ class Job < ApplicationRecord
   def sorted_comments
     comments.order('comments.created_at DESC')
   end
+
+  def self.sort_by_city
+    order('city ASC')
+  end
+
+  def self.sort_by_interest
+    order('level_of_interest DESC')
+  end
+
+  def self.listing_location(location)
+    select('*').where("#{location} = city")
+  end
+
 end
