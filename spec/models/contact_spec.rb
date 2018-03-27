@@ -41,7 +41,7 @@ describe Contact do
     it 'belongs to a company' do
       company = Company.create(name: 'IBM')
       contact = Contact.create!(name: 'Laura', position: 'HR Director', email: 'laura@company.com', company: company)
-      expect(job).to respond_to(:company)
+      expect(contact).to respond_to(:company)
     end
   end
 end
