@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'User edits an existing category' do
   scenario 'a user can edit a category' do
+    Company.create!(name: 'Luke')
     category = Category.create!(name: 'Development')
     visit edit_category_path(category)
 
