@@ -13,6 +13,7 @@ label {
 
 select, input, textarea {
   margin-bottom: 2%;
+  width: 220px;
 }
 
 #job_description {
@@ -20,6 +21,7 @@ select, input, textarea {
 }
 
 .buttons-container input {
+  margin-top: 20px;
   display: inline-block;
   font-family: Helvetica;
   font-size: 12px;
