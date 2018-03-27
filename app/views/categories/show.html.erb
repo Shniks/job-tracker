@@ -3,12 +3,16 @@
 <span id="add-job-label" title="Add a New Job"><%= link_to image_tag("new_job.png", height: 35, width: 35), new_company_path %>
 
 <table>
+  <td class="job-list-1">Role</td>
+  <td class="job-list-1">Company</td>
+  <td class="job-list-1">City</td>
+  <td class="job-list-1">Interest</td>
   <% @category.jobs.each do |job| %>
     <tr class=job_<%= job.id %>>
-      <td><%= job.title %></td>
-      <td><%= link_to job.company.name, company_job_path(job.company) %></td>
-      <td><%= job.city %></td>
-      <td><%= job.level_of_interest %></td>
+      <td class="job-list"><%= job.title %></td>
+      <td class="job-list"><%= link_to job.company.name, company_job_path(job.company) %></td>
+      <td class="job-list"><%= job.city %></td>
+      <td class="job-list"><%= job.level_of_interest %></td>
       <td title="Edit"><%= link_to image_tag("edit.png", height: 15, width: 15), edit_company_job_path(job.company) %></td>
       <td title="Delete"><%= link_to image_tag("delete.png", height: 15, width: 15), company_job_path(job.company), method: "delete" %></td>
   <% end %>
