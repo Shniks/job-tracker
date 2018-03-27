@@ -40,4 +40,19 @@ describe Job do
       expect(job).to respond_to(:category)
     end
   end
+
+  describe 'methods' do
+    describe '.sorted_comments' do
+      it 'sorts comments in reverse chronological order' do
+        company = Company.create!(name: 'ESPN')
+        category = Category.create!(name: 'Production')
+        job = Job.create!(title: 'Manager', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)
+        comment_1 = Comment.create!(content: 'This seems like a good job', job: job)
+        comment_2 = Comment.create!(content: 'Actually, this doesn\'t seem like a good job', job: job)
+        comment_3 = Comment.create!(content: 'Avoid this job', job: job)
+
+        expect(job.sorted_comments.first.content).to eq(comment_3.content)
+      end
+    end
+  end
 end

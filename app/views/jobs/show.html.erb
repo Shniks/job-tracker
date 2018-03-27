@@ -25,8 +25,8 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <% end %>
 
 <table>
-  <% @job.comments.each do |comment| %>
-  <tr>
+  <% @job.sorted_comments.each do |comment| %>
+  <tr id="comment_id_<%= comment.id %>">
     <td><%= comment.created_at %></td>
     <td><%= comment.content %></td>
   </tr>
