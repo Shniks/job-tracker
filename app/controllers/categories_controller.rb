@@ -10,8 +10,8 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      flash[:success] = "#{@category.name} added!"
-      redirect_to category_path(@category)
+      flash[:success] = "Category #{@category.name} added successfully!"
+      redirect_to categories_path(@category)
     else
       flash[:failure] = "Sorry, that category name already exists. Please try again!"
       redirect_to new_category_path
@@ -29,15 +29,18 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     if @category.update(category_params)
-      flash[:success] = "#{@category.name} updated!"
-      redirect_to category_path(@category)
+      flash[:success] = "Category #{@category.name} updated successfully!"
+      redirect_to categories_path(@category)
     else
       redirect_to edit_category_path
     end
   end
 
   def destroy
-    Category.find(params[:id]).destroy
+    category = Category.find(params[:id])
+    category.destroy
+
+    flash[:success] = "Category #{category.name} deleted successfully!"
     redirect_to categories_path
   end
 
