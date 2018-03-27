@@ -9,10 +9,10 @@ describe 'As a user' do
       category_2 = Category.create!(name: 'Production')
       job = company.jobs.create!(title: 'Developer', level_of_interest: 70, city: 'Denver', category_id: category_1.id)
 
-      visit company_job_path(company, job)
+      visit job_path(job)
       click_link 'Edit'
 
-      expect(current_path).to eq("/companies/#{company.id}/jobs/#{job.id}/edit")
+      expect(current_path).to eq(edit_job_path(job))
       expect(page).to have_content('Category')
       expect(page).to have_content('Title')
       expect(page).to have_content('Company')
@@ -30,7 +30,7 @@ describe 'As a user' do
       category_2 = Category.create!(name: 'Production')
       job = company_1.jobs.create!(title: 'Developer', level_of_interest: 70, city: 'Denver', category_id: category_1.id)
 
-      visit edit_company_job_path(company_1, job)
+      visit edit_job_path(job)
 
       fill_in('job[title]', with: 'Developer 2.0')
       fill_in('job[city]', with: 'Boulder')
@@ -38,7 +38,7 @@ describe 'As a user' do
       fill_in('job[level_of_interest]', with: 45)
       click_button('Save')
 
-      expect(current_path).to eq("/companies/#{company_1.id}/jobs/#{job.id}")
+      expect(current_path).to eq(job_path(job))
       expect(page).to have_content('Developer 2.0')
       expect(page).to have_content('ESPN')
       expect(page).to_not have_content('CNN')
