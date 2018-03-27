@@ -11,7 +11,7 @@ describe 'As a user' do
       job_1 = company.jobs.create!(title: 'Developer', level_of_interest: 70, city: 'Denver', category_id: category_1.id)
       job_2 = company.jobs.create!(title: 'Secretary', level_of_interest: 30, city: 'Denver', category_id: category_2.id)
 
-      visit company_job_path(company, job_1)
+      visit job_path(job_1)
       click_link 'Delete'
 
       expect(current_path).to eq("/companies/#{company.id}/jobs")
