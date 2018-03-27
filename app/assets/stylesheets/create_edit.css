@@ -20,6 +20,19 @@ select, input, textarea {
   width: 30%
 }
 
+.new-company {
+  margin-left: 12px;
+  font-size: 40px;
+}
+
+.failure {
+  margin-left: 15px;
+  margin-top: 30px;
+  color: red;
+  font-family: Helvetica;
+  font-size: 24px;
+}
+
 .buttons-container input {
   margin-top: 20px;
   display: inline-block;
