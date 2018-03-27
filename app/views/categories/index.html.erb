@@ -1,16 +1,16 @@
 <%= stylesheet_link_tag "category_show" %>
 <header>
-  <h3>Job Categories:</h3>
-  <span id="add-category-label"><%= link_to "Add a new category", new_category_path %>
+  <h2>Job Categories</h2>
+  <span id="add-category-label"><%= link_to image_tag("nc_icon.png", height: 35, width: 35), new_category_path %>
 </header>
 
 <table>
     <% @categories.each do |category| %>
       <tr class=category_<%= category.id %>>
-        <td><%= link_to "Edit", edit_category_path(category) %></td>
-        <td><%= link_to "Delete", category_path(category), method: "delete" %></td>
-        <td class="aa" ><%= category.name %></td>
+        <td class="category-name" ><%= category.name %></td>
         <td><%= link_to "#{category.jobs.count} Jobs", category_path(category) %></td>
+        <td><%= link_to image_tag("edit.png", height: 15, width: 15), edit_category_path(category) %></td>
+        <td><%= link_to image_tag("delete.png", height: 15, width: 15), method: "delete" %></td>
       </tr>
     <% end %>
 </table>

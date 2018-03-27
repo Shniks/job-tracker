@@ -17,11 +17,13 @@
  /* Main Header */
 .main-header {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   border: 3px;
   font-family: Helvetica;
   font-weight: lighter;
   color: white;
+  padding-left: 15px;
+  padding-bottom: 15px;
   background-color: #4a2e60;
 }
 
