@@ -5,6 +5,6 @@ class Job < ApplicationRecord
   has_many :comments
 
   def sorted_comments
-    comments.order("comments.created_at DESC")
+    comments.order('comments.created_at DESC')
   end
 end
