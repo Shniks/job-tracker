@@ -1,6 +1,26 @@
 <%= stylesheet_link_tag "index_show" %>
-All Jobs for <strong><%= @company.name %></strong>
+<strong><%= @company.name %></strong>
 
-<% @company.jobs.each do |job| %>
-  <ul><%= job.title %></ul>
+<%= form_for [@company, @contact] do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_area :name %>
+
+  <%= f.label :position %>
+  <%= f.text_area :position %>
+
+  <%= f.label :email %>
+  <%= f.text_area :email %>
+
+  <%= f.submit %>
 <% end %>
+
+<table>
+  <% @company.contacts.each do |contact| %>
+  <tr id="contact_id_<%= contact.id %>">
+    <td><%= contact.name %></td>
+    <td><%= contact.position %></td>
+    <td><%= contact.email %></td>
+  </tr>
+  <% end %>
+</table>

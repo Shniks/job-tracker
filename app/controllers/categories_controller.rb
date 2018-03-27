@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     if @category.update(category_params)
       flash[:success] = "Category #{@category.name} updated successfully!"
-      redirect_to categories_path
+      redirect_to category_path(@category)
     else
       redirect_to edit_category_path
     end

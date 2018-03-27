@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag "create_edit" %>
-<%= form_for [@job] do |f| %>
+<%= stylesheet_link_tag "create_edit" %>
+<%= form_for [@company, @job] do |f| %>
 
   <%= f.label :category %>
   <%= f.collection_select(:category_id, Category.all, :id, :name) %>
