@@ -4,7 +4,7 @@ class Company < ApplicationRecord
   has_many :contacts, dependent: :destroy
 
   def self.by_interest
-    select("companies.name, round(AVG(jobs.level_of_interest), 1) AS average_interest")
+    select("companies.name, companies.id, ROUND(AVG(jobs.level_of_interest), 1) AS average_interest")
     .joins(:jobs)
     .order("average_interest DESC")
     .group(:id)

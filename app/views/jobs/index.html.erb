@@ -18,7 +18,7 @@
   <% @jobs.each do |job| %>
     <tr class=job_<%= job.id %>>
       <td class="job-list"><%= link_to job.title, job_path(job) %></td>
-      <td class="job-list"><%= job.company.name %></td>
+      <td class="job-list"><%= link_to job.company.name, company_path(job.company) %></td>
       <td class="job-list"><%= link_to job.city, "/jobs?location=#{job.city}" %></td>
       <td class="job-list-3"><%= job.level_of_interest %></td>
       <td class="job-list-3" title="Edit"><%= link_to image_tag("edit.png", height: 15, width: 15), edit_job_path(job.id) %></td>
