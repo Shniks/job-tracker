@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User visits dashboard' do
-  scenario 'they see top 3 companies by interest' do
+  scenario 'They see top 3 companies by interest' do
     company = Company.create!(name: 'PBS')
     category_1 = Category.create!(name: 'Development')
     company.jobs.create!(title: 'Senior Dev', level_of_interest: 90, city: 'Denver', category_id: category_1.id)
@@ -34,7 +34,7 @@ describe 'User visits dashboard' do
     expect(page).to have_content("30")
   end
 
-  scenario 'they see a count of jobs by level of interest' do
+  scenario 'They see a count of jobs by level of interest' do
     company = Company.create!(name: 'PBS')
     category_1 = Category.create!(name: 'Development')
     company.jobs.create!(title: 'Senior Dev', level_of_interest: 90, city: 'Denver', category_id: category_1.id)
@@ -55,7 +55,7 @@ describe 'User visits dashboard' do
     expect(page).to have_content ('10 (1 jobs)')
   end
 
-  scenario 'they see a count of jobs by location' do
+  scenario 'They see a count of jobs by location' do
     company = Company.create!(name: 'PBS')
     category_1 = Category.create!(name: 'Development')
     company.jobs.create!(title: 'Senior Dev', level_of_interest: 90, city: 'Denver', category_id: category_1.id)

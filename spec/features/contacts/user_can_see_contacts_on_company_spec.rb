@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe 'User goes to a company page' do
-  describe 'they see contacts from that company' do
-    scenario 'they see the contacts and their attributes' do
+  describe 'They see contacts from that company' do
+    scenario 'They see the contacts and their attributes' do
       company = Company.create!(name: 'ESPN')
       contact = Contact.create!(name: 'Laura', position: 'HR Director', email: 'laura@company.com', company: company)
 
@@ -14,8 +14,8 @@ describe 'User goes to a company page' do
     end
   end
 
-  describe 'they see a new contact form' do
-    scenario 'they submit a new contact' do
+  describe 'They see a new contact form' do
+    scenario 'They submit a new contact' do
       company = Company.create!(name: 'IBM')
 
       visit company_path(company)
