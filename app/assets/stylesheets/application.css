@@ -26,7 +26,7 @@
   color: white;
   padding-left: 15px;
   padding-bottom: 15px;
-  background-color: #4a2e60;
+  background-color: #25292e;
 }
 
 header a {
@@ -40,7 +40,7 @@ header a {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  background-color: #4a2e60;
+  background-color: #25292e;
   box-shadow: 10px 10px 5px grey;
 }
 

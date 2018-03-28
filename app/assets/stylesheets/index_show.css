@@ -28,36 +28,44 @@ h2 {
   font-family: Helvetica;
   padding-right: 60px;
   padding-bottom: 15px;
+  text-align: left;
+  padding-top: 15px;
+  padding-left: 10px;
 }
 
 .job-list-1 {
   font-size: 20px;
   font-family: Helvetica;
   font-weight: bold;
-  text-decoration: underline;
   padding-right: 60px;
-  padding-bottom: 15px;
+  background-color: #404448;
+  color: white;
+  padding-top: 15px;
+  padding-left: 10px;
 }
 
 .job-list-2 {
   font-size: 20px;
   font-family: Helvetica;
   font-weight: bold;
-  text-align: center;
-  text-decoration: underline;
-  padding-right: 60px;
-  padding-bottom: 15px;
+  background-color: #404448;
+  color: white;
+  padding-top: 15px;
+  padding-left: 10px;
 }
 
 .job-list-3 {
   font-size: 16px;
   font-family: Helvetica;
-  padding-right: 60px;
   padding-bottom: 15px;
   text-align: center;
+  padding-top: 15px;
+  padding-left: 10px;
 }
 
 .all-jobs-list {
   margin-left: 0px;
   font-family: Helvetica;
 }
+
+tr:nth-child(even) {background-color: #f2f2f2;}
