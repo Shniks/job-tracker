@@ -11,6 +11,13 @@ h2 {
   font-family: Helvetica;
 }
 
+h5 {
+  margin-left: 15px;
+  font-size: 16px;
+  font-family: Helvetica;
+  margin-bottom: -20px;
+}
+
 #add-company-label {
   margin-left: 15px;
   padding-bottom: 120px;
@@ -69,3 +76,8 @@ h2 {
 }
 
 tr:nth-child(even) {background-color: #f2f2f2;}
+
+.job-list-1 a, .job-list-2 a {
+  color: inherit;
+  text-decoration: none;
+}
