@@ -1,8 +1,10 @@
 <%= stylesheet_link_tag "index_show" %>
-<h3>Job Tracker</h3>
+<h3>Welcome To Your Jobs Dashboard</h3>
+
+<h2 class="contacts-1">Top Companies By Interest</h2>
+
 <section class="dashboard">
   <div class="top-companies">
-    <h2>Top Companies by Interest</h2>
     <ul>
       <% @top_companies.each do |company| %>
       <li><%= company.name %> (Average interest level: <%= company.average_interest %>)</li>
