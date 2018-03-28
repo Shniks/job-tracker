@@ -1,9 +1,9 @@
 <%= stylesheet_link_tag "index_show" %>
 <h3>Welcome To Your Jobs Dashboard</h3>
 
-<h2 class="contacts-1">Top Companies By Interest</h2>
+<!-- <h2 class="contacts-1">Top Companies By Interest</h2> -->
 
-<table>
+<table width="300" border="1" padding-right: "40px" style="float:left;">
   <td class="job-list-4">Company</td>
   <td class="job-list-6">Interest</td>
   <% @top_companies.each do |company| %>
@@ -15,9 +15,9 @@
 </table>
 
 
-<h2 class="contacts-1">Jobs By Location</h2>
+<!-- <h2 class="contacts-1">Jobs By Location</h2> -->
 
-<table>
+<table width="300" border="1" style="float:left;">
   <td class="job-list-4">Location</td>
   <td class="job-list-6">No. Of Jobs</td>
   <% @jobs_by_location.each do |location| %>
@@ -28,8 +28,9 @@
   </tr>
 </table>
 
-<h2 class="contacts-1">Jobs By Interest</h2>
-<table>
+<!-- <h2 class="contacts-1">Jobs By Interest</h2> -->
+
+<table width="300" border="1" style="float:left;">
   <td class="job-list-4">Interest</td>
   <td class="job-list-6">No. Of Jobs</td>
   <% @jobs_by_interest.each do |interest| %>
