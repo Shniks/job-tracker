@@ -6,9 +6,11 @@ class JobsController < ApplicationController
       @jobs = Job.sort_by_interest
     elsif location_params[:location]
       @jobs = Job.listing_location(location_params[:location])
-    else
+    elsif params[:company_id]
       @company = Company.find(params[:company_id])
       @jobs = @company.jobs
+    else
+      @jobs = Job.all
     end
     render :index
   end

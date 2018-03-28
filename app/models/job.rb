@@ -17,6 +17,6 @@ class Job < ApplicationRecord
   end
 
   def self.listing_location(location)
-    select('*').where("#{location} = city")
+    select('*').where( "city = '#{location.downcase}'")
   end
 end
