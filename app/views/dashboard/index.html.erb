@@ -1,2 +1,31 @@
 <%= stylesheet_link_tag "index_show" %>
-<h2>This is the landing page. The Dashboard goes here!</h2>
+<h2>Job Tracker</h2>
+<section class="dashboard">
+  <div class="top-companies">
+    <h2>Top Companies by Interest</h2>
+    <ul>
+      <% @top_companies.each do |company| %>
+      <li><%= company.name %> (Average interest level: <%= company.average_interest %>)</li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="jobs-by-location">
+    <h2>Jobs by Location</h2>
+    <ul>
+      <% @jobs_by_location.each do |location| %>
+      <li><a href="/jobs?location=<%= location.city %>"><%= location.city %> jobs</a> (<%= location.city_count %> jobs)</li>
+      <% end %>
+    </ul>
+  </div>
+
+
+  <div class="jobs-by-interest">
+    <h2>Jobs by Interest</h2>
+    <ul>
+      <% @jobs_by_interest.each do |interest| %>
+      <li><%= interest.level_of_interest %> (<%= interest.interest_count %> jobs)</li>
+      <% end %>
+    </ul>
+  </div>
+</section>
