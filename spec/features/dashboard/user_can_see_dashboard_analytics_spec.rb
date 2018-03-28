@@ -49,10 +49,10 @@ describe 'User visits dashboard' do
 
     visit root_path
 
-    expect(page).to have_content ('90 (3 jobs)')
-    expect(page).to have_content ('30 (3 jobs)')
-    expect(page).to have_content ('20 (2 jobs)')
-    expect(page).to have_content ('10 (1 jobs)')
+    expect(page).to have_content ('90')
+    expect(page).to have_content ('30')
+    expect(page).to have_content ('20')
+    expect(page).to have_content ('10')
   end
 
   scenario 'They see a count of jobs by location' do
@@ -70,9 +70,9 @@ describe 'User visits dashboard' do
 
     visit root_path
 
-    expect(page).to have_link('Denver jobs')
-    expect(page).to have_content('Denver jobs (5 jobs)')
-    expect(page).to have_link('Boulder jobs')
-    expect(page).to have_content('Boulder jobs (4 jobs)')
+    expect(page).to have_link('Denver')
+    expect(page).to have_content('5')
+    expect(page).to have_link('Boulder')
+    expect(page).to have_content('4')
   end
 end
