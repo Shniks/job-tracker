@@ -1,6 +1,5 @@
 <%= stylesheet_link_tag "index_show" %>
 <h3>All Jobs for Category '<%= @category.name %>'</h3>
-<span id="add-job-label" title="Add a New Job"><%= link_to image_tag("new_job.png", height: 35, width: 35), new_company_job_path(Company.all.first.id) %>
 
 <table>
   <td class="job-list-1">Role</td>
