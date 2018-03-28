@@ -69,7 +69,7 @@ describe 'User visits dashboard' do
     company.jobs.create!(title: 'Pen Dev', level_of_interest: 10, city: 'Boulder', category_id: category_1.id)
 
     visit root_path
-save_and_open_page
+
     expect(page).to have_link('Denver jobs')
     expect(page).to have_content('Denver jobs (5 jobs)')
     expect(page).to have_link('Boulder jobs')
