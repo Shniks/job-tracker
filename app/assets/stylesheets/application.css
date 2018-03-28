@@ -48,6 +48,7 @@ header a {
 .navbar a {
   float: left;
   font-size: 16px;
+  font-family: Helvetica;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -64,6 +65,7 @@ header a {
 /* Dropdown button */
 .dropdown .dropbtn {
   font-size: 16px;
+  font-family: Helvetica;
   border: none;
   outline: none;
   padding: 14px 16px;
@@ -86,7 +88,7 @@ header a {
   margin-left: -40px;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 180px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -113,9 +115,13 @@ header a {
 
 .dropdown .dropbtn {
   font-size: 16px;
+  text-align: center;
+  font-family: Helvetica;
   text-decoration: none;
 }
 
 .dropdown .dropdown-content a {
   font-size: 14px;
+  text-align: center;
+  font-family: Helvetica;
 }

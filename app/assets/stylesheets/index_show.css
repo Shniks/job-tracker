@@ -14,11 +14,13 @@ h2 {
 #add-company-label {
   margin-left: 15px;
   padding-bottom: 120px;
+  font-family: Helvetica;
 }
 
 #add-job-label {
   margin-left: 15px;
   padding-bottom: 120px;
+  font-family: Helvetica;
 }
 
 .company-list, .job-list {
@@ -57,4 +59,5 @@ h2 {
 
 .all-jobs-list {
   margin-left: 0px;
+  font-family: Helvetica;
 }
