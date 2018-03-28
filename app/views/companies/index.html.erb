@@ -4,13 +4,15 @@
   <span id="add-company-label" title="Add a New Company"><%= link_to image_tag("company.png", height: 35, width: 35), new_company_path %>
 </header>
 
-<h2>Company Name</h2>
 <table>
-    <% @companies.each do |company| %>
-      <tr class=company_<%= company.id %>>
-        <td class="company-list"><%= link_to company.name, company_path(company) %></td>
-        <td title="Edit"><%= link_to image_tag("edit.png", height: 15, width: 15), edit_company_path(company) %></td>
-        <td title="Delete"><%= link_to image_tag("delete.png", height: 15, width: 15), company_path(company), method: "delete" %></td>
-      </tr>
+  <td class="job-list-1">ROLE</td>
+  <td class="job-list-2"></td>
+  <td class="job-list-2"></td>
+  <% @companies.each do |company| %>
+    <tr class=company_<%= company.id %>>
+      <td class="job-list"><%= link_to company.name, company_path(company) %></td>
+      <td class="job-list-3" title="Edit"><%= link_to image_tag("edit.png", height: 15, width: 15), edit_company_path(company) %></td>
+      <td class="job-list-3" title="Delete"><%= link_to image_tag("delete.png", height: 15, width: 15), company_path(company), method: "delete" %></td>
+    </tr>
     <% end %>
 </table>
