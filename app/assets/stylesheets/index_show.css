@@ -81,6 +81,13 @@ h5 {
   padding-left: 10px;
 }
 
+.job-list-5 {
+  font-size: 22px;
+  font-family: Helvetica;
+  list-style-type: none;
+  padding-left: 20px;
+}
+
 .all-jobs-list {
   margin-left: 0px;
   font-family: Helvetica;
@@ -99,13 +106,23 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 }
 
 .contacts-1 {
+  margin-top: 20px;
+  margin-bottom: 30px;
   font-size: 20px;
   font-family: Helvetica;
   font-weight: bold;
   padding-right: 60px;
   background-color: #4f4f4f;
   color: white;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 10px;
+}
+
+.job-show-page {
+  margin-left: 0px;
+}
+
+.comments {
+  padding-left: 15px;
 }

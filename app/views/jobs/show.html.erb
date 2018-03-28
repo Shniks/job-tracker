@@ -1,34 +1,38 @@
 <%= stylesheet_link_tag "index_show" %>
-Title: <%= @job.title %>
-<br>
+<table class="job-show-page">
+  <td><h3>Job Title: <%= @job.title %></h3></td>
+  <td><%= link_to image_tag("edit.png", height: 30, width: 30), edit_job_path(@job) %></td>
+  <td><%= link_to image_tag("delete.png", height: 30, width: 30), job_path(@job), method: "delete" %></td>
+<table>
 
-Description: <%= @job.description %>
-<br>
+<h2 class="contacts-1">Job Details</h2>
 
-Level of Interest: <%= @job.level_of_interest %>
-<br>
+<li class="job-list-5">City: <%= @job.city %></li>
+<li class="job-list-5">Company: <%= link_to @job.company.name, company_path(@job.company) %></li>
+<li class="job-list-5">Description: <%= @job.description %></li>
+<li class="job-list-5">Level of Interest: <%= @job.level_of_interest %></li>
 
-City: <%= @job.city %>
-<br>
+<h2 class="contacts-1">Create a New Comment</h2>
 
-Company: <%= link_to @job.company.name, company_path(@job.company) %>
+<div class="comments">
+  <%= form_for [@job, @comment] do |f| %>
 
-<%= link_to "Edit", edit_job_path(@job) %>
-<%= link_to "Delete", job_path(@job), method: "delete" %>
+    <%= f.label :notes %></br>
+    <%= f.text_area :content %></br>
 
-<%= form_for [@job, @comment] do |f| %>
+    <%= f.submit %>
+  <% end %>
+</div>
 
-  <%= f.label :notes %>
-  <%= f.text_area :content %>
-
-  <%= f.submit %>
-<% end %>
+<h2 class="contacts-1">Existing Comments</h2>
 
 <table>
+  <td class="job-list-4">Timestamp</td>
+  <td class="job-list-4">Comment</td>
   <% @job.sorted_comments.each do |comment| %>
   <tr id="comment_id_<%= comment.id %>">
-    <td><%= comment.created_at %></td>
-    <td><%= comment.content %></td>
+    <td class="job-list"><%= comment.created_at %></td>
+    <td class="job-list"><%= comment.content %></td>
   </tr>
   <% end %>
 </table>
