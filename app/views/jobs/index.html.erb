@@ -6,24 +6,23 @@
     <h3>List Of Jobs</h3>
   <% end %>
 </header>
-<span id="add-job-label" title="Add a New Job"><%= link_to image_tag("new_job.png", height: 35, width: 35), new_company_job_path(Company.all.first.id) %>
 
 <h5>Please click on 'City' or 'Interest' to sort</h5>
 <table>
-  <td class="job-list-1">ROLE</td>
-  <td class="job-list-1">COMPANY</td>
-  <td class="job-list-1"><%= link_to "CITY", "/jobs?sort=location" %></td>
-  <td class="job-list-2"><%= link_to "INTEREST", "/jobs?sort=interest" %></td>
-  <td class="job-list-2"></td>
-  <td class="job-list-2"></td>
+  <th class="job-list-1">ROLE</th>
+  <th class="job-list-1">COMPANY</th>
+  <th class="job-list-1"><%= link_to "CITY", "/jobs?sort=location" %></th>
+  <th class="job-list-2"><%= link_to "INTEREST", "/jobs?sort=interest" %></th>
+  <th class="job-list-2"></th>
+  <th class="job-list-2"></th>
   <% @jobs.each do |job| %>
     <tr class=job_<%= job.id %>>
       <td class="job-list"><%= link_to job.title, job_path(job) %></td>
       <td class="job-list"><%= job.company.name %></td>
       <td class="job-list"><%= link_to job.city, "/jobs?location=#{job.city}" %></td>
       <td class="job-list-3"><%= job.level_of_interest %></td>
-      <td class="job-list-3" title="Edit"><%= link_to image_tag("edit.png", height: 15, width: 15), edit_job_path(job.company) %></td>
-      <td class="job-list-3" title="Delete"><%= link_to image_tag("delete.png", height: 15, width: 15), job_path(job.company), method: "delete" %></td>
+      <td class="job-list-3" title="Edit"><%= link_to image_tag("edit.png", height: 15, width: 15), edit_job_path(job.id) %></td>
+      <td class="job-list-3" title="Delete"><%= link_to image_tag("delete.png", height: 15, width: 15), job_path(job.id), method: "delete" %></td>
     </tr>
   <% end %>
 </table>
