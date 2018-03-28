@@ -29,6 +29,11 @@
   background-color: #4a2e60;
 }
 
+header a {
+  color: white;
+  text-decoration: none;
+}
+
  /* Navbar Container */
 .navbar {
   overflow: hidden;
