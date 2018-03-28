@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "index_show" %>
-<h3>All Jobs for <%= @category.name %></h3>
+<h3>All Jobs for Category '<%= @category.name %></h3>'
 <span id="add-job-label" title="Add a New Job"><%= link_to image_tag("new_job.png", height: 35, width: 35), new_company_job_path(Company.all.first.id) %>
 
 <table>
@@ -17,3 +17,5 @@
       <td title="Delete"><%= link_to image_tag("delete.png", height: 15, width: 15), job_path(job.company), method: "delete" %></td>
   <% end %>
 </table>
+
+<a class="buttons-container-1" href="/jobs">Go Back</a>
