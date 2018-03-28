@@ -29,6 +29,11 @@
   background-color: #4a2e60;
 }
 
+header a {
+  color: white;
+  text-decoration: none;
+}
+
  /* Navbar Container */
 .navbar {
   overflow: hidden;
@@ -76,7 +81,9 @@
 /* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
-  right: 0;
+  top: 50px;
+  margin-top: 50px;
+  margin-left: -40px;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
