@@ -15,13 +15,13 @@
 <h2 class="contacts-1">Create a New Comment</h2>
 
 
-  <%= form_for [@job, @comment] do |f| %>
+<%= form_for [@job, @comment] do |f| %>
 
-    <%= f.label :notes %></br>
-    <%= f.text_area :content %></br>
+  <p class="comments"><%= f.label :notes %></p>
+  <p class="comments"><%= f.text_area :content %></p>
 
-    <%= f.submit %>
-  <% end %>
+  <p class="comments"><%= f.submit %></p>
+<% end %>
 
 
 <h2 class="contacts-1">Existing Comments</h2>

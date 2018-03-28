@@ -158,4 +158,5 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 .comments {
   padding-left: 15px;
+  text-decoration: none;
 }
