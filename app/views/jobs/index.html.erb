@@ -1,6 +1,10 @@
 <%= stylesheet_link_tag "index_show" %>
 <header>
-  <h3>All <%= @jobs.company.name %></strong> Jobs</h3>
+  <% if @company %>
+      <h3>All <%= @company.name %></strong> Jobs</h3>
+  <% else %>
+    <h3>All Jobs</h3>
+  <% end %>
 </header>
 
 <div class="all-jobs-list">

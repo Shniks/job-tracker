@@ -20,7 +20,6 @@ describe 'User creates a new job' do
     job = company.jobs.last
 
     expect(current_path).to eq(company_jobs_path(company))
-    save_and_open_page
     expect(page).to have_content("#{job.company.name}")
     expect(page).to have_content("#{job.title}")
   end
