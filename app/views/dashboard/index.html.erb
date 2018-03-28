@@ -4,8 +4,8 @@
 <!-- <h2 class="contacts-1">Top Companies By Interest</h2> -->
 
 <table width=32% border="1" padding-right: "40px" style="float:left;">
-  <td class="job-list-4">Company</td>
-  <td class="job-list-6">Interest</td>
+  <td class="job-list-7">Company</td>
+  <td class="job-list-8">Interest</td>
   <% @top_companies.each do |company| %>
   <tr id="company_id_<%= company.id %>">
     <td class="job-list"><%= company.name %></td>
@@ -18,8 +18,8 @@
 <!-- <h2 class="contacts-1">Jobs By Location</h2> -->
 
 <table width=32% border="1" style="float:left;">
-  <td class="job-list-4">Location</td>
-  <td class="job-list-6">No. Of Jobs</td>
+  <td class="job-list-7">Location</td>
+  <td class="job-list-8">No. Of Jobs</td>
   <% @jobs_by_location.each do |location| %>
   <tr id="location_id_<%= location.id %>">
     <td class="job-list"><a href="/jobs?location=<%= location.city %>"><%= location.city %></a></td>
@@ -31,8 +31,8 @@
 <!-- <h2 class="contacts-1">Jobs By Interest</h2> -->
 
 <table width=32% border="1" style="float:left;">
-  <td class="job-list-4">Interest</td>
-  <td class="job-list-6">No. Of Jobs</td>
+  <td class="job-list-7">Interest</td>
+  <td class="job-list-8">No. Of Jobs</td>
   <% @jobs_by_interest.each do |interest| %>
   <tr id="interest_id_<%= interest.id %>">
     <td class="job-list"><%= interest.level_of_interest %></td>
