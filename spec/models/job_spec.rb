@@ -94,5 +94,36 @@ describe Job do
         expect(Job.listing_location(location).count).to eq(2)
       end
     end
+
+    describe '.group_by_interest' do
+      it 'groups jobs by level of interest' do
+        company = Company.create!(name: 'ESPN')
+        category = Category.create!(name: 'Production')
+        job_1 = Job.create!(title: 'Manager 1', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)
+        job_2 = Job.create!(title: 'Manager 2', level_of_interest: 90, description: 'Wahoo', city: 'Bakersfield', company: company, category: category)
+        job_3 = Job.create!(title: 'Manager 3', level_of_interest: 60, description: 'Wahoo', city: 'austin', company: company, category: category)
+        job_4 = Job.create!(title: 'Manager 3', level_of_interest: 60, description: 'Wahoo', city: 'Denver', company: company, category: category)
+        job_5 = Job.create!(title: 'Manager 3', level_of_interest: 60, description: 'Wahoo', city: 'Austin', company: company, category: category)
+
+        expect(Job.group_by_interest.first.level_of_interest).to eq(90)
+        expect(Job.group_by_interest.first.interest_count).to eq(1)
+      end
+    end
+
+    describe '.group_by_location' do
+      it 'groups jobs by location' do
+        company = Company.create!(name: 'ESPN')
+        category = Category.create!(name: 'Production')
+        job_1 = Job.create!(title: 'Manager 1', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)
+        job_2 = Job.create!(title: 'Manager 2', level_of_interest: 90, description: 'Wahoo', city: 'Bakersfield', company: company, category: category)
+        job_3 = Job.create!(title: 'Manager 3', level_of_interest: 60, description: 'Wahoo', city: 'Austin', company: company, category: category)
+        job_4 = Job.create!(title: 'Manager 3', level_of_interest: 60, description: 'Wahoo', city: 'Denver', company: company, category: category)
+        job_5 = Job.create!(title: 'Manager 3', level_of_interest: 60, description: 'Wahoo', city: 'Austin', company: company, category: category)
+        job_6 = Job.create!(title: 'Manager 3', level_of_interest: 60, description: 'Wahoo', city: 'Austin', company: company, category: category)
+
+        expect(Job.group_by_location.first.city_count).to eq(3)
+        expect(Job.group_by_location.first.city).to eq("Austin")
+      end
+    end
   end
 end
