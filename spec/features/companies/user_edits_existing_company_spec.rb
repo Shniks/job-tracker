@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User edits an existing company' do
-  scenario 'A user can edit a company' do
+  scenario 'They can edit a company' do
     company = Company.create!(name: 'ESPN')
     visit edit_company_path(company)
 

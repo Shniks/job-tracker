@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-describe 'As a user' do
-  describe 'When I visit the edit page for a job' do
-    it 'I can see all the fields for editing the job' do
+describe 'User visits edit page for a job' do
+    it 'They can see all the fields for editing the job' do
 
       company = Company.create!(name: 'ESPN')
       category_1 = Category.create!(name: 'Development')
@@ -23,7 +22,7 @@ describe 'As a user' do
       expect(page).to have_button('Save')
     end
 
-    it 'I can submit changes to a job' do
+    it 'They can submit changes to a job' do
       company_1 = Company.create!(name: 'ESPN')
       company_2 = Company.create!(name: 'CNN')
       category_1 = Category.create!(name: 'Development')
@@ -46,5 +45,4 @@ describe 'As a user' do
       expect(page).to have_content('This is a different job')
       expect(page).to have_content('45')
     end
-  end
 end

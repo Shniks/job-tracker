@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'User sees one company' do
-  scenario 'A user sees a company' do
+describe 'User goes to a company path' do
+  scenario 'They see a company' do
     company = Company.create!(name: 'ESPN')
     category = Category.create!(name: 'Development')
     company.jobs.create!(title: 'Developer', level_of_interest: 90, city: 'Denver', category_id: category.id)
