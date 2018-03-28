@@ -9,7 +9,7 @@
   <% @top_companies.each do |company| %>
   <tr id="company_id_<%= company.id %>">
     <td class="job-list"><%= company.name %></td>
-    <td class="job-list-3"><%= company.average_interest %></td>
+    <td class="job-list-3"><%= company.average_interest.round(1) %></td>
   <% end %>
   </tr>
 </table>
