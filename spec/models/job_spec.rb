@@ -66,5 +66,18 @@ describe Job do
         expect(Job.sort_by_city.first.city).to eq(job_3.city)
       end
     end
+
+    describe '.sort_by_interest' do
+      it 'sorts interest in reverse chronological order' do
+        company = Company.create!(name: 'ESPN')
+        category = Category.create!(name: 'Production')
+        job_1 = Job.create!(title: 'Manager 1', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)
+        job_2 = Job.create!(title: 'Manager 2', level_of_interest: 90, description: 'Wahoo', city: 'Bakersfield', company: company, category: category)
+        job_3 = Job.create!(title: 'Manager 3', level_of_interest: 60, description: 'Wahoo', city: 'Austin', company: company, category: category)
+
+        expect(Job.sort_by_interest.first.level_of_interest).to eq(job_2.level_of_interest)
+        expect(Job.sort_by_interest.last.level_of_interest).to eq(job_3.level_of_interest)
+      end
+    end
   end
 end
