@@ -5,10 +5,10 @@ class CommentsController < ApplicationController
     @comment.save
     redirect_to job_path(params[:job_id])
   end
-end
 
-private
+  private
 
-def comment_params
-  params.require(:comment).permit(:content)
+  def comment_params
+    params.require(:comment).permit(:content)
+  end
 end
