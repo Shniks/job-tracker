@@ -4,15 +4,15 @@
 <span id="add-job-label" title="Add a New Job"><%= link_to image_tag("new_job.png", height: 35, width: 35), new_company_job_path(@company) %>
 
 <table>
-  <td class="job-list-1">Role</td>
-  <td class="job-list-1">Company</td>
-  <td class="job-list-1">City</td>
-  <td class="job-list-2">Interest</td>
-  <td class="job-list-2"></td>
-  <td class="job-list-2"></td>
+  <th class="job-list-1">Role</th>
+  <th class="job-list-1">Company</th>
+  <th class="job-list-1">City</th>
+  <th class="job-list-2">Interest</th>
+  <th class="job-list-2"></th>
+  <th class="job-list-2"></th>
   <% @company.jobs.each do |job| %>
     <tr class=job_<%= job.id %>>
-      <td class="job-list"><%= job.title %></td>
+      <td class="job-list"><%= link_to job.title, job_path(job) %></td>
       <td class="job-list"><%= link_to job.company.name, company_path(job.company) %></td>
       <td class="job-list"><%= job.city %></td>
       <td class="job-list-3"><%= job.level_of_interest %></td>
@@ -41,10 +41,10 @@
 <h2 class="contacts-1">Existing Contacts</h2>
 
 <table>
-  <td class="job-list-4">No.</td>
-  <td class="job-list-4">Name</td>
-  <td class="job-list-4">Position</td>
-  <td class="job-list-4">Email</td>
+  <th class="job-list-4">No.</th>
+  <th class="job-list-4">Name</th>
+  <th class="job-list-4">Position</th>
+  <th class="job-list-4">Email</th>
   <% @company.contacts.each do |contact| %>
   <tr id="contact_id_<%= contact.id %>">
     <td class="job-list"><%= contact.id %></td>

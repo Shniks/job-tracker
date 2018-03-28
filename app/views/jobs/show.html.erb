@@ -27,8 +27,8 @@
 <h2 class="contacts-1">Existing Comments</h2>
 
 <table>
-  <td class="job-list-4">Timestamp</td>
-  <td class="job-list-4">Comment</td>
+  <th class="job-list-4">Timestamp</th>
+  <th class="job-list-4">Comment</th>
   <% @job.sorted_comments.each do |comment| %>
   <tr id="comment_id_<%= comment.id %>">
     <td class="job-list"><%= comment.created_at %></td>

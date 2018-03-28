@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'User sees all jobs' do
-  scenario 'User sees all the jobs for a specific company' do
+describe 'User visits company jobs path' do
+  scenario 'They see all the jobs for a specific company' do
     company = Company.create!(name: 'ESPN')
     category_1 = Category.create!(name: 'Development')
     category_2 = Category.create!(name: 'Production')
@@ -15,7 +15,7 @@ describe 'User sees all jobs' do
     expect(page).to have_content("#{job_2.title}")
   end
 
-  scenario 'User sees all the jobs for a specific location' do
+  scenario 'They see all the jobs for a specific location' do
     company = Company.create!(name: 'ESPN')
     category = Category.create!(name: 'Development')
     job_1 = company.jobs.create!(title: 'Developer', level_of_interest: 70, city: 'Denver', category_id: category.id)
@@ -31,7 +31,7 @@ describe 'User sees all jobs' do
     expect(page).to have_content("#{job_5.title}")
   end
 
-  scenario 'User sees all jobs sorted by interest' do
+  scenario 'They see all jobs sorted by interest' do
     company = Company.create!(name: 'ESPN')
     category = Category.create!(name: 'Development')
     job_1 = company.jobs.create!(title: 'Developer', level_of_interest: 70, city: 'Denver', category_id: category.id)
@@ -45,7 +45,7 @@ describe 'User sees all jobs' do
     expect(page.first(:xpath, '//tr')).to have_content("#{job_2.level_of_interest}")
   end
 
-  scenario 'User sees all jobs sorted by location' do
+  scenario 'They see all jobs sorted by location' do
     company = Company.create!(name: 'ESPN')
     category = Category.create!(name: 'Development')
     job_1 = company.jobs.create!(title: 'Developer', level_of_interest: 70, city: 'Denver', category_id: category.id)

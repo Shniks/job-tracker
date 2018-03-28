@@ -5,9 +5,9 @@
 </header>
 
 <table>
-  <td class="job-list-1">ROLE</td>
-  <td class="job-list-2"></td>
-  <td class="job-list-2"></td>
+  <th class="job-list-1">ROLE</th>
+  <th class="job-list-2"></th>
+  <th class="job-list-2"></th>
   <% @companies.each do |company| %>
     <tr class=company_<%= company.id %>>
       <td class="job-list"><%= link_to company.name, company_path(company) %></td>

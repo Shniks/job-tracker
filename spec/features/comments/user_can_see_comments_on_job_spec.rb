@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe 'User goes to a job page' do
-  describe 'They see a comment about that job' do
-    scenario 'They see the comment and its attributes' do
+  describe 'They sees a comment about that job' do
+    scenario 'They sees the comment and its attributes' do
       company = Company.create!(name: 'ESPN')
       category = Category.create!(name: 'Production')
       job = Job.create!(title: 'Manager', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)

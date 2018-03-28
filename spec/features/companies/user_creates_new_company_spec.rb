@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User creates a new company' do
-  scenario 'A user can create a new company' do
+  scenario 'They can create a new company' do
     visit new_company_path
 
     fill_in 'company[name]', with: 'ESPN'
