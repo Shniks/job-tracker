@@ -46,6 +46,7 @@ h5 {
   font-weight: bold;
   padding-right: 60px;
   background-color: #4f4f4f;
+  text-align: left;
   color: white;
   padding-top: 15px;
   padding-left: 10px;
@@ -103,7 +104,8 @@ h5 {
   font-size: 24px;
   font-family: Helvetica;
   font-weight: bold;
-  padding-right: 60px;
+  text-align: left;
+  padding-right: 0px;
   background-color: #4f4f4f;
   color: white;
   padding-top: 15px;
