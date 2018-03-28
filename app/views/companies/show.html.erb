@@ -12,7 +12,7 @@
   <td class="job-list-2"></td>
   <% @company.jobs.each do |job| %>
     <tr class=job_<%= job.id %>>
-      <td class="job-list"><%= job.title %></td>
+      <td class="job-list"><%= link_to job.title, job_path(job) %></td>
       <td class="job-list"><%= link_to job.company.name, company_path(job.company) %></td>
       <td class="job-list"><%= job.city %></td>
       <td class="job-list-3"><%= job.level_of_interest %></td>
