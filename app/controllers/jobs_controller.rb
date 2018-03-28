@@ -16,15 +16,19 @@ class JobsController < ApplicationController
   end
 
   def new
-    @job = Job.new()
     @categories = Category.all
     @companies = Company.all
-    @company = Company.find(params[:company_id])
+    @company = Company.find(params[:company_id]) if params[:company_id]
+    @job = Job.new()
   end
 
   def create
-    @company = Company.find(params[:company_id])
-    @job = @company.jobs.new(job_params)
+    if params[:company_id]
+      @company = Company.find(params[:company_id])
+      @job = @company.jobs.new(job_params)
+    else
+      @job = Job.new()
+    end
     if @job.save
       flash[:success] = "You created #{@job.title} at #{@company.name}"
       redirect_to company_jobs_path
@@ -34,6 +38,7 @@ class JobsController < ApplicationController
   end
 
   def show
+
     @job = Job.find(params[:id])
     @comment = Comment.new
   end

@@ -5,16 +5,14 @@ Rails.application.routes.draw do
     resources :contacts
   end
 
-  resources :jobs, only: [:index] do
+  resources :jobs, only: [:index, :new] do
     resources :comments, only: [:new, :create]
   end
 
   resources :categories
 
+  root 'dashboard#index'
 
-  get 'dashboard', to: 'dashboard#show'
-
-  root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
