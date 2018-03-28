@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe 'User goes to a job page' do
-  describe 'they see a comment about that job' do
-    scenario 'they see the comment and its attributes' do
+  describe 'They see a comment about that job' do
+    scenario 'They see the comment and its attributes' do
       company = Company.create!(name: 'ESPN')
       category = Category.create!(name: 'Production')
       job = Job.create!(title: 'Manager', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)
@@ -15,8 +15,8 @@ describe 'User goes to a job page' do
     end
   end
 
-  describe 'they see a new comment form' do
-    scenario 'they submit a new comment' do
+  describe 'They see a new comment form' do
+    scenario 'They submit a new comment' do
       company = Company.create!(name: 'ESPN')
       category = Category.create!(name: 'Production')
       job = Job.create!(title: 'Manager', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)
@@ -29,8 +29,8 @@ describe 'User goes to a job page' do
     end
   end
 
-  describe 'they see all comments in reverse chronological order' do
-    scenario 'they see newest comment first' do
+  describe 'They see all comments in reverse chronological order' do
+    scenario 'They see newest comment first' do
       company = Company.create!(name: 'ESPN')
       category = Category.create!(name: 'Production')
       job = Job.create!(title: 'Manager', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)

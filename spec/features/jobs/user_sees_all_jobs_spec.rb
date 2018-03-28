@@ -42,7 +42,7 @@ describe 'User sees all jobs' do
 
     visit '/jobs?sort=interest'
 
-    expect(page.first(:xpath, '//ul')).to have_content("#{job_2.level_of_interest}")
+    expect(page.first(:xpath, '//tr')).to have_content("#{job_2.level_of_interest}")
   end
 
   scenario 'User sees all jobs sorted by location' do
@@ -56,6 +56,6 @@ describe 'User sees all jobs' do
 
     visit '/jobs?sort=location'
 
-    expect(page.first(:xpath, '//ul')).to have_content("#{job_5.city}")
+    expect(page.first(:xpath, '//tr')).to have_content("#{job_5.city}")
   end
 end

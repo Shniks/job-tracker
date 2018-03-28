@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "create_edit" %>
-<%= stylesheet_link_tag "create_edit" %>
+
 <%= form_for [@company, @job] do |f| %>
 
   <%= f.label :category %>
@@ -21,9 +21,9 @@
   <%= f.text_field :city %>
 
 
-  <div class="create-edit-buttons-container">
+  <div class="buttons-container">
     <%= f.submit("Save") %>
-    <a class="create-edit-buttons-container" href="#">Cancel</a>
+    <a class="buttons-container-1" href="/jobs">Cancel</a>
   </div>
 
 <% end %>

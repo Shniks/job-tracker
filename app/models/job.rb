@@ -24,11 +24,13 @@ class Job < ApplicationRecord
     select("COUNT(level_of_interest) AS interest_count, level_of_interest")
     .order("level_of_interest DESC")
     .group(:level_of_interest)
+    .limit (10)
   end
 
   def self.group_by_location
     select("COUNT(city) AS city_count, jobs.city")
     .group(:city)
     .order("city_count DESC")
+    .limit (10)
   end
 end

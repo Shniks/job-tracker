@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User visits dashboard' do
-  scenario 'they see top 3 companies by interest' do
+  scenario 'They see top 3 companies by interest' do
     company = Company.create!(name: 'PBS')
     category_1 = Category.create!(name: 'Development')
     company.jobs.create!(title: 'Senior Dev', level_of_interest: 90, city: 'Denver', category_id: category_1.id)
@@ -34,7 +34,7 @@ describe 'User visits dashboard' do
     expect(page).to have_content("30")
   end
 
-  scenario 'they see a count of jobs by level of interest' do
+  scenario 'They see a count of jobs by level of interest' do
     company = Company.create!(name: 'PBS')
     category_1 = Category.create!(name: 'Development')
     company.jobs.create!(title: 'Senior Dev', level_of_interest: 90, city: 'Denver', category_id: category_1.id)
@@ -49,13 +49,13 @@ describe 'User visits dashboard' do
 
     visit root_path
 
-    expect(page).to have_content ('90 (3 jobs)')
-    expect(page).to have_content ('30 (3 jobs)')
-    expect(page).to have_content ('20 (2 jobs)')
-    expect(page).to have_content ('10 (1 jobs)')
+    expect(page).to have_content ('90')
+    expect(page).to have_content ('30')
+    expect(page).to have_content ('20')
+    expect(page).to have_content ('10')
   end
 
-  scenario 'they see a count of jobs by location' do
+  scenario 'They see a count of jobs by location' do
     company = Company.create!(name: 'PBS')
     category_1 = Category.create!(name: 'Development')
     company.jobs.create!(title: 'Senior Dev', level_of_interest: 90, city: 'Denver', category_id: category_1.id)
@@ -70,9 +70,9 @@ describe 'User visits dashboard' do
 
     visit root_path
 
-    expect(page).to have_link('Denver jobs')
-    expect(page).to have_content('Denver jobs (5 jobs)')
-    expect(page).to have_link('Boulder jobs')
-    expect(page).to have_content('Boulder jobs (4 jobs)')
+    expect(page).to have_link('Denver')
+    expect(page).to have_content('5')
+    expect(page).to have_link('Boulder')
+    expect(page).to have_content('4')
   end
 end

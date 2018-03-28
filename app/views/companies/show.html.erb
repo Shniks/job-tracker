@@ -1,5 +1,7 @@
 <%= stylesheet_link_tag "index_show" %>
-<strong><%= @company.name %></strong>
+<h3>Company Name: <%= @company.name %></h3>
+
+<h2 class="contacts-1">Create a New Contact</h2>
 
 <%= form_for [@company, @contact] do |f| %>
 
@@ -15,12 +17,19 @@
   <%= f.submit %>
 <% end %>
 
+<h2 class="contacts-1">Existing Contacts</h2>
+
 <table>
+  <td class="job-list-4">No.</td>
+  <td class="job-list-4">Name</td>
+  <td class="job-list-4">Position</td>
+  <td class="job-list-4">Email</td>
   <% @company.contacts.each do |contact| %>
   <tr id="contact_id_<%= contact.id %>">
-    <td><%= contact.name %></td>
-    <td><%= contact.position %></td>
-    <td><%= contact.email %></td>
+    <td class="job-list"><%= contact.id %></td>
+    <td class="job-list"><%= contact.name %></td>
+    <td class="job-list"><%= contact.position %></td>
+    <td class="job-list"><%= contact.email %></td>
   </tr>
   <% end %>
 </table>

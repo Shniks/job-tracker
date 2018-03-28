@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User creates a new job' do
-  scenario 'a user can create a new job' do
+  scenario 'A user can create a new job' do
     company = Company.create!(name: 'ESPN')
     category_1 = Category.create!(name: 'Development')
     category_2 = Category.create!(name: 'Production')

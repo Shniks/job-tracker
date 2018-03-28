@@ -1,26 +1,26 @@
 require 'rails_helper'
 
 describe Job do
-  describe 'validations' do
-    context 'invalid attributes' do
-      it 'is invalid without a title' do
+  describe 'Validations' do
+    context 'Invalid attributes' do
+      it 'Is invalid without a title' do
         job = Job.new(level_of_interest: 80, description: 'Wahoo', city: 'Denver')
         expect(job).to be_invalid
       end
 
-      it 'is invalid without a level of interest' do
+      it 'Is invalid without a level of interest' do
         job = Job.new(title: 'Developer', description: 'Wahoo', city: 'Denver')
         expect(job).to be_invalid
       end
 
-      it 'is invalid without a city' do
+      it 'Is invalid without a city' do
         job = Job.new(title: 'Developer', description: 'Wahoo', level_of_interest: 80)
         expect(job).to be_invalid
       end
     end
 
-    context 'valid attributes' do
-      it 'is valid with a title, level of interest, company and category' do
+    context 'Valid attributes' do
+      it 'Is valid with a title, level of interest, company and category' do
         company = Company.new(name: 'Turing')
         category = Category.create!(name: 'Development')
         job = Job.new(title: 'Developer', level_of_interest: 40, city: 'Denver', company: company, category: category)
@@ -29,21 +29,21 @@ describe Job do
     end
   end
 
-  describe 'relationships' do
-    it 'belongs to a company' do
+  describe 'Relationships' do
+    it 'Belongs to a company' do
       job = Job.new(title: 'Software', level_of_interest: 70, description: 'Wahooo')
       expect(job).to respond_to(:company)
     end
 
-    it 'belongs to a category' do
+    it 'Belongs to a category' do
       job = Job.new(title: 'Software', level_of_interest: 70, description: 'Wahooo')
       expect(job).to respond_to(:category)
     end
   end
 
-  describe 'methods' do
+  describe 'Methods' do
     describe '.sorted_comments' do
-      it 'sorts comments in reverse chronological order' do
+      it 'Sorts comments in reverse chronological order' do
         company = Company.create!(name: 'ESPN')
         category = Category.create!(name: 'Production')
         job = Job.create!(title: 'Manager', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)
@@ -56,7 +56,7 @@ describe Job do
     end
 
     describe '.sort_by_city' do
-      it 'sorts city in chronological order' do
+      it 'Sorts city in chronological order' do
         company = Company.create!(name: 'ESPN')
         category = Category.create!(name: 'Production')
         job_1 = Job.create!(title: 'Manager 1', level_of_interest: 60, description: 'Wahoo', city: 'Denver', company: company, category: category)
@@ -68,7 +68,7 @@ describe Job do
     end
 
     describe '.sort_by_interest' do
-      it 'sorts interest in reverse chronological order' do
+      it 'Sorts interest in reverse chronological order' do
         company = Company.create!(name: 'ESPN')
         category = Category.create!(name: 'Production')
         job_1 = Job.create!(title: 'Manager 1', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)
@@ -81,7 +81,7 @@ describe Job do
     end
 
     describe '.listing_location' do
-      it 'lists the jobs by specified location' do
+      it 'Lists the jobs by specified location' do
         company = Company.create!(name: 'ESPN')
         category = Category.create!(name: 'Production')
         job_1 = Job.create!(title: 'Manager 1', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)
@@ -96,7 +96,7 @@ describe Job do
     end
 
     describe '.group_by_interest' do
-      it 'groups jobs by level of interest' do
+      it 'Groups jobs by level of interest' do
         company = Company.create!(name: 'ESPN')
         category = Category.create!(name: 'Production')
         job_1 = Job.create!(title: 'Manager 1', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)
@@ -111,7 +111,7 @@ describe Job do
     end
 
     describe '.group_by_location' do
-      it 'groups jobs by location' do
+      it 'Groups jobs by location' do
         company = Company.create!(name: 'ESPN')
         category = Category.create!(name: 'Production')
         job_1 = Job.create!(title: 'Manager 1', level_of_interest: 80, description: 'Wahoo', city: 'Denver', company: company, category: category)

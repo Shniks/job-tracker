@@ -1,31 +1,42 @@
 <%= stylesheet_link_tag "index_show" %>
-<h2>Job Tracker</h2>
-<section class="dashboard">
-  <div class="top-companies">
-    <h2>Top Companies by Interest</h2>
-    <ul>
-      <% @top_companies.each do |company| %>
-      <li><%= company.name %> (Average interest level: <%= company.average_interest %>)</li>
-      <% end %>
-    </ul>
-  </div>
+<h3>Welcome To Your Jobs Dashboard</h3>
 
-  <div class="jobs-by-location">
-    <h2>Jobs by Location</h2>
-    <ul>
-      <% @jobs_by_location.each do |location| %>
-      <li><a href="/jobs?location=<%= location.city %>"><%= location.city %> jobs</a> (<%= location.city_count %> jobs)</li>
-      <% end %>
-    </ul>
-  </div>
+<!-- <h2 class="contacts-1">Top Companies By Interest</h2> -->
+
+<table width=32% border="1" padding-right: "40px" style="float:left;">
+  <td class="job-list-7">Company</td>
+  <td class="job-list-8">Interest</td>
+  <% @top_companies.each do |company| %>
+  <tr id="company_id_<%= company.id %>">
+    <td class="job-list"><%= company.name %></td>
+    <td class="job-list-3"><%= company.average_interest %></td>
+  <% end %>
+  </tr>
+</table>
 
 
-  <div class="jobs-by-interest">
-    <h2>Jobs by Interest</h2>
-    <ul>
-      <% @jobs_by_interest.each do |interest| %>
-      <li><%= interest.level_of_interest %> (<%= interest.interest_count %> jobs)</li>
-      <% end %>
-    </ul>
-  </div>
-</section>
+<!-- <h2 class="contacts-1">Jobs By Location</h2> -->
+
+<table width=32% border="1" style="float:left;">
+  <td class="job-list-7">Location</td>
+  <td class="job-list-8">No. Of Jobs</td>
+  <% @jobs_by_location.each do |location| %>
+  <tr id="location_id_<%= location.id %>">
+    <td class="job-list"><a href="/jobs?location=<%= location.city %>"><%= location.city %></a></td>
+    <td class="job-list-3"><%= location.city_count %></td>
+  <% end %>
+  </tr>
+</table>
+
+<!-- <h2 class="contacts-1">Jobs By Interest</h2> -->
+
+<table width=32% border="1" style="float:left;">
+  <td class="job-list-7">Interest</td>
+  <td class="job-list-8">No. Of Jobs</td>
+  <% @jobs_by_interest.each do |interest| %>
+  <tr id="interest_id_<%= interest.id %>">
+    <td class="job-list"><%= interest.level_of_interest %></td>
+    <td class="job-list-3"><%= interest.interest_count %></td>
+  <% end %>
+  </tr>
+</table>

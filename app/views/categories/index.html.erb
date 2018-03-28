@@ -4,14 +4,17 @@
   <span id="add-category-label" title="Add a New Category"><%= link_to image_tag("nc_icon.png", height: 35, width: 35), new_category_path %>
 </header>
 
-<h3>Category Name</h3>
 <table>
-    <% @categories.each do |category| %>
-      <tr class=category_<%= category.id %>>
-        <td class="category-name" ><%= category.name %></td>
-        <td><%= link_to "#{category.jobs.count} Jobs", category_path(category) %></td>
-        <td title="Edit"><%= link_to image_tag("edit.png", height: 15, width: 15), edit_category_path(category) %></td>
-        <td title="Delete"><%= link_to image_tag("delete.png", height: 15, width: 15), category_path(category), method: "delete" %></td>
-      </tr>
+  <td class="job-list-1">NAME</td>
+  <td class="job-list-1">NO. OF JOBS</td>
+  <td class="job-list-2"></td>
+  <td class="job-list-2"></td>
+  <% @categories.each do |category| %>
+    <tr class=category_<%= category.id %>>
+      <td class="job-list"><%= link_to category.name, category_path(category) %></td>
+      <td class="job-list"><%= link_to "#{category.jobs.count} Jobs", category_path(category) %></td>
+      <td class="job-list-3" title="Edit"><%= link_to image_tag("edit.png", height: 15, width: 15), edit_category_path(category) %></td>
+      <td class="job-list-3" title="Delete"><%= link_to image_tag("delete.png", height: 15, width: 15), category_path(category), method: "delete" %></td>
+    </tr>
     <% end %>
 </table>

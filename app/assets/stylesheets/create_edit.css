@@ -4,21 +4,25 @@ form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  font-family: Helvetica;
 }
 
 h3 {
   margin-left: 12px;
   font-size: 40px;
+  font-family: Helvetica;
 }
 
 label {
   margin-bottom: 1%;
   font-weight: bold;
+  font-family: Helvetica;
 }
 
 select, input, textarea {
   margin-bottom: 2%;
   width: 220px;
+  font-family: Helvetica;
 }
 
 #job_description {
@@ -28,6 +32,7 @@ select, input, textarea {
 .new-company {
   margin-left: 12px;
   font-size: 40px;
+  font-family: Helvetica;
 }
 
 .failure {
