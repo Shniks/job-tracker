@@ -24,7 +24,7 @@ describe 'User visits dashboard' do
     company_4.jobs.create!(title: 'VP', level_of_interest: 10, city: 'Denver', category_id: category_4.id)
 
 
-    visit '/dashboard'
+    visit '/'
 
     expect(page).to have_content(company)
     expect(page).to have_content(company_2)
@@ -44,7 +44,7 @@ describe 'User visits dashboard' do
     company.jobs.create!(title: 'Keys Dev', level_of_interest: 20, city: 'Denver', category_id: category_1.id)
     company.jobs.create!(title: 'Pen Dev', level_of_interest: 10, city: 'Denver', category_id: category_1.id)
 
-    visit '/dashboard'
+    visit '/'
 
     expect(page).to have_content ('90 (3 jobs)')
     expect(page).to have_content ('30 (3 jobs)')
@@ -65,8 +65,8 @@ describe 'User visits dashboard' do
     company.jobs.create!(title: 'Keys Dev', level_of_interest: 20, city: 'Boulder', category_id: category_1.id)
     company.jobs.create!(title: 'Pen Dev', level_of_interest: 10, city: 'Boulder', category_id: category_1.id)
 
-    visit '/dashboard'
-    
+    visit '/'
+
     expect(page).to have_link('Denver jobs')
     expect(page).to have_content('Denver jobs (5 jobs)')
     expect(page).to have_link('Boulder jobs')
