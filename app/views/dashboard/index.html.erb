@@ -11,25 +11,31 @@
     <td class="job-list"><%= company.name %></td>
     <td class="job-list-3"><%= company.average_interest %></td>
   <% end %>
+  </tr>
 </table>
 
 
-  <div class="jobs-by-location">
-    <h2>Jobs by Location</h2>
-    <ul>
-      <% @jobs_by_location.each do |location| %>
-      <li><a href="/jobs?location=<%= location.city %>"><%= location.city %> jobs</a> (<%= location.city_count %> jobs)</li>
-      <% end %>
-    </ul>
-  </div>
+<h2 class="contacts-1">Jobs By Location</h2>
 
+<table>
+  <td class="job-list-4">Location</td>
+  <td class="job-list-6">No. Of Jobs</td>
+  <% @jobs_by_location.each do |location| %>
+  <tr id="location_id_<%= location.id %>">
+    <td class="job-list"><a href="/jobs?location=<%= location.city %>"><%= location.city %></a></td>
+    <td class="job-list-3"><%= location.city_count %></td>
+  <% end %>
+  </tr>
+</table>
 
-  <div class="jobs-by-interest">
-    <h2>Jobs by Interest</h2>
-    <ul>
-      <% @jobs_by_interest.each do |interest| %>
-      <li><%= interest.level_of_interest %> (<%= interest.interest_count %> jobs)</li>
-      <% end %>
-    </ul>
-  </div>
-</section>
+<h2 class="contacts-1">Jobs By Interest</h2>
+<table>
+  <td class="job-list-4">Interest</td>
+  <td class="job-list-6">No. Of Jobs</td>
+  <% @jobs_by_interest.each do |interest| %>
+  <tr id="interest_id_<%= interest.id %>">
+    <td class="job-list"><%= interest.level_of_interest %></td>
+    <td class="job-list-3"><%= interest.interest_count %></td>
+  <% end %>
+  </tr>
+</table>

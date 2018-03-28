@@ -1,9 +1,9 @@
 <%= stylesheet_link_tag "index_show" %>
 <header>
   <% if @company %>
-      <h3>All <%= @company.name %></strong> Jobs</h3>
+      <h3>All <%= @company.name %> Jobs</h3>
   <% else %>
-    <h3>All Jobs</h3>
+    <h3>List Of Jobs</h3>
   <% end %>
 </header>
 <span id="add-job-label" title="Add a New Job"><%= link_to image_tag("new_job.png", height: 35, width: 35), new_company_job_path(Company.all.first.id) %>
