@@ -24,11 +24,14 @@ describe 'User visits dashboard' do
     company_4.jobs.create!(title: 'VP', level_of_interest: 10, city: 'Denver', category_id: category_4.id)
 
 
-    visit '/dashboard'
+    visit root_path
 
-    expect(page).to have_content(company)
-    expect(page).to have_content(company_2)
-    expect(page).to have_content(company_3)
+    expect(page).to have_content(company.name)
+    expect(page).to have_content("90")
+    expect(page).to have_content(company_2.name)
+    expect(page).to have_content("80")
+    expect(page).to have_content(company_3.name)
+    expect(page).to have_content("30")
   end
 
   scenario 'they see a count of jobs by level of interest' do
@@ -44,12 +47,12 @@ describe 'User visits dashboard' do
     company.jobs.create!(title: 'Keys Dev', level_of_interest: 20, city: 'Denver', category_id: category_1.id)
     company.jobs.create!(title: 'Pen Dev', level_of_interest: 10, city: 'Denver', category_id: category_1.id)
 
-    visit '/dashboard'
+    visit root_path
 
     expect(page).to have_content ('90 (3 jobs)')
     expect(page).to have_content ('30 (3 jobs)')
     expect(page).to have_content ('20 (2 jobs)')
-    expect(page).to have_content ('20 (1 jobs)')
+    expect(page).to have_content ('10 (1 jobs)')
   end
 
   scenario 'they see a count of jobs by location' do
@@ -65,8 +68,8 @@ describe 'User visits dashboard' do
     company.jobs.create!(title: 'Keys Dev', level_of_interest: 20, city: 'Boulder', category_id: category_1.id)
     company.jobs.create!(title: 'Pen Dev', level_of_interest: 10, city: 'Boulder', category_id: category_1.id)
 
-    visit '/dashboard'
-    
+    visit root_path
+save_and_open_page
     expect(page).to have_link('Denver jobs')
     expect(page).to have_content('Denver jobs (5 jobs)')
     expect(page).to have_link('Boulder jobs')
