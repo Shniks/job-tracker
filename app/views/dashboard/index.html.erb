@@ -3,14 +3,16 @@
 
 <h2 class="contacts-1">Top Companies By Interest</h2>
 
-<section class="dashboard">
-  <div class="top-companies">
-    <ul>
-      <% @top_companies.each do |company| %>
-      <li><%= company.name %> (Average interest level: <%= company.average_interest %>)</li>
-      <% end %>
-    </ul>
-  </div>
+<table>
+  <td class="job-list-4">Company</td>
+  <td class="job-list-6">Interest</td>
+  <% @top_companies.each do |company| %>
+  <tr id="company_id_<%= company.id %>">
+    <td class="job-list"><%= company.name %></td>
+    <td class="job-list-3"><%= company.average_interest %></td>
+  <% end %>
+</table>
+
 
   <div class="jobs-by-location">
     <h2>Jobs by Location</h2>

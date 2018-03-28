@@ -88,6 +88,17 @@ h5 {
   padding-left: 20px;
 }
 
+.job-list-6 {
+  font-size: 16px;
+  font-family: Helvetica;
+  font-weight: bold;
+  background-color: #4f4f4f;
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
 .all-jobs-list {
   margin-left: 0px;
   font-family: Helvetica;
