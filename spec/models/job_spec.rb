@@ -54,5 +54,17 @@ describe Job do
         expect(job.sorted_comments.first.content).to eq(comment_3.content)
       end
     end
+
+    describe '.sort_by_city' do
+      it 'sorts city in chronological order' do
+        company = Company.create!(name: 'ESPN')
+        category = Category.create!(name: 'Production')
+        job_1 = Job.create!(title: 'Manager 1', level_of_interest: 60, description: 'Wahoo', city: 'Denver', company: company, category: category)
+        job_2 = Job.create!(title: 'Manager 2', level_of_interest: 70, description: 'Wahoo', city: 'Bakersfield', company: company, category: category)
+        job_3 = Job.create!(title: 'Manager 3', level_of_interest: 80, description: 'Wahoo', city: 'Austin', company: company, category: category)
+
+        expect(Job.sort_by_city.first.city).to eq(job_3.city)
+      end
+    end
   end
 end
